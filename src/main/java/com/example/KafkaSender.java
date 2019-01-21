@@ -13,7 +13,7 @@ public class KafkaSender {
 	@Autowired
 	private KafkaTemplate<String, String> kafkaTemplate;
 
-	String kafkaTopic = "votes";
+	String kafkaTopic = "users";
 
 	public void send(User user) {
 		try {
