@@ -19,9 +19,8 @@ public class SpringBootKafkaExampleApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		for (int i = 0; i < 100; i++) {
-			Vote vote = new Vote();
-			vote.setName("Ariv" + i);
-			kafkaSender.send(vote);
+			User user = new User("Ariv" + i, "00#" + i);
+			kafkaSender.send(user);
 		}
 	}
 
