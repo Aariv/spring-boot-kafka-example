@@ -8,16 +8,16 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
-public class KafkaSender {
+public class KafkaSender<T> {
 
 	@Autowired
 	private KafkaTemplate<String, String> kafkaTemplate;
 
-	String kafkaTopic = "users";
+	String kafkaTopic = "users-02";
 
-	public void send(User user) {
+	public void send(T payload) {
 		try {
-			kafkaTemplate.send(kafkaTopic, new ObjectMapper().writeValueAsString(user));
+			kafkaTemplate.send(kafkaTopic, new ObjectMapper().writeValueAsString(payload));
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}

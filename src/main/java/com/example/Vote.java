@@ -15,6 +15,11 @@ public class Vote {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Vote(String name) {
+		super();
+		this.name = name;
+	}
+
 	/**
 	 * @return the name
 	 */
@@ -23,8 +28,7 @@ public class Vote {
 	}
 
 	/**
-	 * @param name
-	 *            the name to set
+	 * @param name the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
